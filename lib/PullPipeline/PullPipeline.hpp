@@ -1,0 +1,6 @@
+#ifndef PULLPIPELINE_HPP
+#define PULLPIPELINE_HPP
+
+
+
+#endif // PULLPIPELINE_HPP
