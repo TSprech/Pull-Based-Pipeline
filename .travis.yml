@@ -8,7 +8,7 @@ cache:
         - "~/.platformio"
 
 env:
-    - PLATFORMIO_CI_SRC=examples/NumberPipeline.cpp
+    - PLATFORMIO_CI_SRC=examples/NumberPipeline.cpp PLATFORMIO_BUILD_UNFLAGS="-std=gnu++11" PLATFORMIO_BUILD_FLAGS="-std=c++17"
     # - PLATFORMIO_CI_SRC=examples/
 
 install:
