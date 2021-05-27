@@ -8,7 +8,7 @@ cache:
         - "~/.platformio"
 
 env:
-    # - PLATFORMIO_CI_SRC=examples/
+    - PLATFORMIO_CI_SRC=examples/NumberPipeline.cpp
     # - PLATFORMIO_CI_SRC=examples/
 
 install:
@@ -16,4 +16,4 @@ install:
     - platformio update
 
 script:
-    - platformio ci --lib="." --board=adafruit_feather_m0 --board=uno --board=adafruit_grandcentral_m4
+    - platformio ci --lib="." --board=adafruit_feather_m0 --board=adafruit_grandcentral_m4
