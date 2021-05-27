@@ -1,5 +1,13 @@
+/**
+ * @author TSprech
+ * @date 5/26/2021
+ * @brief Contains the pipes namespace and all types/operators that go along with it.
+ */
+
 #ifndef PULLPIPELINE_HPP
 #define PULLPIPELINE_HPP
+
+#include <functional>
 
 namespace pipes {
 // Note the term function is used frequently but in practice all the "functions" are actually lambdas
