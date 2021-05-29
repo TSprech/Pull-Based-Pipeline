@@ -12,14 +12,16 @@ float output = 0;
 // This is an output, it takes in a parameter (input) and returns nothing
 pipes::PullOutput<float> assign_float = [](auto input) { output = input; };
 
+auto pipeline = assign_float << divide_by_2 << constant;  // This takes input, casts it and divides it by 2, then assigns the result to output
+
 void setup() {
   Serial.begin(9600);
   // clang-format off
     while(!Serial);
   // clang-format on
 
-  assign_float << divide_by_2 << constant;  // This takes input, casts it and divides it by 2, then assigns the result to output
-  Serial.print(output); // This should print "1.50"
+  pipeline();
+  Serial.print(output);  // This should print "1.50"
 }
 
 void loop() {

@@ -29,13 +29,15 @@ pipes::PullOutput<std::tuple<int, float, char>> print_values = [](auto input) {
   Serial.println(input_char);
 };
 
+auto pipeline = print_values << assign_char_s << assign_float_3_6_int_20 << multiple_values;  // This should print "2" because 2 is being returned from constant_2 and passed to print_int which prints it
+
 void setup() {
   Serial.begin(9600);
   // clang-format off
     while(!Serial);
   // clang-format on
 
-  print_values << assign_char_s << assign_float_3_6_int_20 << multiple_values;  // This should print "2" because 2 is being returned from constant_2 and passed to print_int which prints it
+  pipeline();
 }
 
 void loop() {
