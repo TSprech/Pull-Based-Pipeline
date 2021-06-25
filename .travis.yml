@@ -1,0 +1,20 @@
+language: python
+python:
+    - "3.6"
+
+sudo: false
+cache:
+    directories:
+        - "~/.platformio"
+
+env:
+    - PLATFORMIO_CI_SRC=examples/NumberPipeline.cpp PLATFORMIO_BUILD_UNFLAGS="-std=gnu++11" PLATFORMIO_BUILD_FLAGS="-std=c++17"
+    - PLATFORMIO_CI_SRC=examples/NumberFilterPipeline.cpp PLATFORMIO_BUILD_UNFLAGS="-std=gnu++11" PLATFORMIO_BUILD_FLAGS="-std=c++17"
+    - PLATFORMIO_CI_SRC=examples/MultipleReturnPipeline.cpp PLATFORMIO_BUILD_UNFLAGS="-std=gnu++11" PLATFORMIO_BUILD_FLAGS="-std=c++17"
+
+install:
+    - pip install -U platformio
+    - platformio update
+
+script:
+    - platformio ci --lib="." --board=adafruit_feather_m0 --board=adafruit_grandcentral_m4

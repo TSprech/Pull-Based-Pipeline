@@ -1,0 +1,14 @@
+Standard: Cpp11
+BasedOnStyle: Google
+AlignTrailingComments: true
+AllowShortLoopsOnASingleLine: true
+ColumnLimit: 0
+IndentWidth: 2
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+PointerAlignment: Right
+ReflowComments: false
+SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
